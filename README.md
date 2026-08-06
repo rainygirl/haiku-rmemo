@@ -1,5 +1,7 @@
 # R Memo for Haiku OS
 
+한국어 버전은 [`README.ko.md`](README.ko.md) 참고 / For Korean, see [`README.ko.md`](README.ko.md).
+
 A note-taking app for Haiku OS that sits on your desktop and looks just like real notes.
 
 ![Three notes on the Haiku desktop](screenshots/notes.png)
