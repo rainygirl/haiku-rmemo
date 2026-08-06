@@ -1,0 +1,18 @@
+resource app_signature "application/x-vnd.RMemo";
+
+/* B_SINGLE_LAUNCH: one instance owns the notes and their settings file.
+   A second copy would load the same notes again and then race the first one
+   on save. This has to come from the resources, not from an IsRunning()
+   check in main(): the roster registers the team under the signature before
+   the binary starts, so such a check finds itself and quits. */
+resource app_flags B_SINGLE_LAUNCH;
+
+resource app_version {
+	major  = 1,
+	middle = 0,
+	minor  = 0,
+	variety = B_APPV_FINAL,
+	internal = 0,
+	short_info = "R Memo",
+	long_info  = "Notes that sit on the desktop and look like notes."
+};
