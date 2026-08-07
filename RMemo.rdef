@@ -7,49 +7,6 @@ resource app_signature "application/x-vnd.RMemo";
    the binary starts, so such a check finds itself and quits. */
 resource app_flags B_SINGLE_LAUNCH;
 
-/* HVIF (flat icon), written by hand rather than exported from Icon-O-Matic,
-   so the bytes below are worth spelling out. The picture is a single sheet of
-   memo paper, flat and face on: a red binding strip with three punch holes
-   across the top, and three bars standing in for handwriting below it. It is
-   deliberately not a stack with a dog-eared corner -- that is the generic
-   text-document icon, and it also reads as a sheet lying at an angle rather
-   than facing the viewer. Coordinates use the usual 64x64 icon grid, one byte
-   each (value + 32), and the bars are 5 units thick so they survive the scale
-   down to a 16px Deskbar icon.
-
-   Line 1   magic 'ncif'.
-   Line 2   style count, then four solid RGBA colours: paper, binding strip,
-            punch holes, ruled lines.
-   Line 7   path count, then eight closed curve-free paths (flags 0x0A):
-            sheet, strip, three holes, three bars.
-   Line 16  shape count, then four shapes; the last two each draw their whole
-            group of paths with a single style.
-
-   Note that rc rejects a comment placed between two $"" literals of an array,
-   which is why none of this is written inline below. */
-resource vector_icon array {
-	$"6E636966"
-	$"04"
-	$"01FFEEA8FF"
-	$"01E24B3CFF"
-	$"01FFFFFFFF"
-	$"016E5F2AFF"
-	$"08"
-	$"0A042A265626565A2A5A"
-	$"0A042A26562656342A34"
-	$"0A04322A382A38303230"
-	$"0A043D2A432A43303D30"
-	$"0A04482A4E2A4E304830"
-	$"0A04303C503C50413041"
-	$"0A0430465046504B304B"
-	$"0A043050465046553055"
-	$"04"
-	$"0A00010000"
-	$"0A01010100"
-	$"0A020302030400"
-	$"0A030305060700"
-};
-
 resource app_version {
 	major  = 1,
 	middle = 0,
@@ -58,4 +15,13 @@ resource app_version {
 	internal = 0,
 	short_info = "R Memo",
 	long_info  = "Notes that sit on the desktop and look like notes."
+};
+
+/* R Memo */
+resource(101, "BEOS:ICON") #'VICN' array {
+	$"6E6369660501FAE282FF01AF9E5BFF01786C3EFF01C4963CFF016E541EFF080A"
+	$"0422354047405522430A045E355E43405540470A0440235E35404722350A043D"
+	$"2A533751383B2B0A04382D4D3A4C3B362E0A043230483D463E31310A042D343B"
+	$"3C3A3D2B350A0442274D2E4B2F4028050A010100000A020101000A000102000A"
+	$"030403040506000A04010700"
 };
