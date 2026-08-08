@@ -1,3 +1,5 @@
+<img src="icon.png" width="64" align="left" alt="">
+
 # R Memo for Haiku OS
 
 [한국어](README.ko.md)
