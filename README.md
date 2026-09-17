@@ -12,7 +12,21 @@ Notes that sit on the desktop and look like notes. Each one is a borderless wind
 
 Haiku (x86 or x86_64). Build it on the machine you are going to run it on — no cross-compiler needed.
 
-## Install
+Also builds and runs on arm64, cross-compiled against the Haiku kits; it needs nothing outside them.
+
+## Install with pkgman
+
+| Haiku | Commands |
+| --- | --- |
+| 32-bit x86 (x86_gcc2) | `pkgman add-repo https://pkgman.rainygirl.com/x86_gcc2`<br>`pkgman install rmemo` |
+| x86_64 | `pkgman add-repo https://pkgman.rainygirl.com/x86_64`<br>`pkgman install rmemo` |
+| arm64 | `pkgman add-repo http://pkgman.rainygirl.com/arm64`<br>`pkgman install rmemo` |
+
+Then start **R Memo** from Deskbar -> Applications.
+
+If `pkgman add-repo` fails with `Operation not supported`, the network kit of that image has no TLS; use `http://` instead of `https://` in the address.
+
+## Install from source
 
 ```sh
 ./install.sh
